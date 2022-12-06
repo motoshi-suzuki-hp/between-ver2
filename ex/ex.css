@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Noto+Serif+JP:wght@300&family=Parisienne&display=swap');
+
+html {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: black;
+}
+
+.grid {
+    background-color: #ffffff;
+
+    width: 90vw;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    margin: auto;
+}
+
+  
+.grid div {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+}  
+
+
+
+
+#TebanMessage {
+    position:absolute;
+    left: 50vw;
+    transform: translateX(-50%);
+    bottom:2vh;
+    font-size: 3vw;
+    color: #FFF;
+    -webkit-text-stroke: 1px #000;
+}
+
+@media screen and (max-height:400px) {
+        
+    #TebanMessage {
+        position:absolute;
+        bottom:-2vh;
+    }
+}

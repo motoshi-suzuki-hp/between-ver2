@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Betweenラフスケッチ</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="./ex2.css">
+<link rel="stylesheet" href="./reset.css">
+<script type="text/javascript" src="ex2.js"></script>
+
+ 
+</head>
+
+<body>
+
+<div style="display:none">
+
+
+<div id="cell_board" style="position:absolute;width:13vw;height:16vh">
+<img style="display:block;position:relative;width:100%;height:100%" src=./img/empty.png>
+</div>
+
+<div id="cell_capture" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/cell_capture.png>
+</div>
+
+<div id="FU_black" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/fu_black.png>
+</div>
+
+<div id="KY_black" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/ky_black.png>
+</div>
+
+<div id="KE_black" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/ke_black.png>
+</div>
+
+<div id="GI_black" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/gi_black.png>
+</div>
+
+<div id="KI_black" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/ki_black.png>
+</div>
+
+<div id="HI_black" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/hi_black.png>
+</div>
+
+<div id="KA_black" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/ka_black.png>
+</div>
+
+<div id="OU_black" style="position:absolute;width:13vw;height:16vh">
+<img style="display:block;position:relative;width:100%;height:100%" src=./img/black.png>
+</div>
+
+<div id="TO_black" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/to_black.png>
+</div>
+
+<div id="NY_black" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/ny_black.png>
+</div>
+
+<div id="NK_black" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/nk_black.png>
+</div>
+
+<div id="NG_black" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/ng_black.png>
+</div>
+
+<div id="RY_black" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/ry_black.png>
+</div>
+
+<div id="UM_black" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/um_black.png>
+</div>
+
+
+<div id="FU_white" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/fu_white.png>
+</div>
+
+<div id="KY_white" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/ky_white.png>
+</div>
+
+<div id="KE_white" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/ke_white.png>
+</div>
+
+<div id="GI_white" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/gi_white.png>
+</div>
+
+<div id="KI_white" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/ki_white.png>
+</div>
+
+<div id="HI_white" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/hi_white.png>
+</div>
+
+<div id="KA_white" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/ka_white.png>
+</div>
+
+<div id="OU_white" style="position:absolute;width:13vw;height:16vh">
+<img style="display:block;position:relative;width:100%;height:100%" src=./img/white.png>
+</div>
+
+<div id="TO_white" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/to_white.png>
+</div>
+
+<div id="NY_white" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/ny_white.png>
+</div>
+
+<div id="NK_white" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/nk_white.png>
+</div>
+
+<div id="NG_white" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/ng_white.png>
+</div>
+
+<div id="RY_white" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/ry_white.png>
+</div>
+
+<div id="UM_white" style="position:absolute;width:41px;height:41px">
+<img style="display:block;position:relative;width:41px;height:41px" src=./KomaImage/um_white.png>
+</div>
+
+
+
+
+
+
+<div id="selected_black" style="position:absolute;width:13vw;height:16vh">
+<img style="display:block;position:relative;width:100%;height:100%" src=./KomaImage/selected_black.png>
+</div>
+
+<div id="selected_white" style="position:absolute;width:13vw;height:16vh">
+<img style="display:block;position:relative;width:100%;height:100%" src=./KomaImage/selected_white.png>
+</div>
+
+
+
+</div>
+
+
+
+<div style="position:relative;top:10px;left:10px">
+
+
+
+
+    <div class="grid" id="board">
+        <div id="1"></div>
+        <div id="2"></div>
+        <div id="3"></div>
+        <div id="4"></div>
+        <div id="5"></div>
+        <div id="6"></div>
+        <div id="7"></div>
+        <div id="8"></div>
+        <div id="9"></div>
+        <div id="10"></div>
+        <div id="11"></div>
+        <div id="12"></div>
+        <div id="13"></div>
+        <div id="14"></div>
+        <div id="15"></div>
+        <div id="16"></div>
+        <div id="17"></div>
+        <div id="18"></div>
+        <div id="19"></div>
+        <div id="20"></div>
+        <div id="21"></div>
+        <div id="22"></div>
+        <div id="23"></div>
+        <div id="24"></div>
+        <div id="25"></div>
+        <div id="26"></div>
+        <div id="27"></div>
+        <div id="28"></div>
+        <div id="29"></div>
+        <div id="30"></div>
+        <div id="31"></div>
+        <div id="32"></div>
+        <div id="33"></div>
+        <div id="34"></div>
+        <div id="35"></div>
+      </div>
+
+
+</div>
+
+<div id="TebanMessage"></div>
+</div>
+
+
+</body>
+</html>
+
+
+
