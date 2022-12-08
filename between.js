@@ -29,6 +29,10 @@ Direction[4]  = new PiecePos(0,-1);  //→
 Direction[5]  = new PiecePos(-1,-1); //→↑
 Direction[6]  = new PiecePos(-1,0);  //↑
 Direction[7]  = new PiecePos(-1,1);  //←↑
+Direction[8]  = new PiecePos(-2,1);  //先手の桂馬飛び
+Direction[9]  = new PiecePos(-2,-1); //先手の桂馬飛び
+Direction[10] = new PiecePos(2,1);   //後手の桂馬飛び
+Direction[11] = new PiecePos(2,-1);  //後手の桂馬飛び
 
 var CanGo = [
 //←
@@ -76,6 +80,30 @@ var CanGo = [
 //←↑
 [
   0,1,
+  0,1
+],
+
+//先手の桂馬飛び{-2,1}
+[
+  0,1,
+  0,0
+],
+
+//先手の桂馬飛び{2,1}
+[
+  0,1,
+  0,0
+],
+
+//後手の桂馬飛び{-2,1}
+[
+  0,0,
+  0,1
+],
+
+//後手の桂馬飛び{2,1}
+[
+  0,0,
   0,1
 ],
 
@@ -130,6 +158,34 @@ var CanGo = [
 //   0,0
 // ],
 
+// //先手の桂馬飛び{-2,1}
+// [
+// //  歩香桂銀金角飛玉と杏圭全金馬竜
+//   0,0,
+//   0,0
+// ],
+
+// //先手の桂馬飛び{2,1}
+// [
+// //  歩香桂銀金角飛玉と杏圭全金馬竜
+//   0,0,
+//   0,0
+// ],
+
+// //後手の桂馬飛び{-2,1}
+// [
+// //  歩香桂銀金角飛玉と杏圭全金馬竜
+//   0,0,
+//   0,0
+// ],
+
+// //後手の桂馬飛び{2,1}
+// [
+// //  歩香桂銀金角飛玉と杏圭全金馬竜
+//   0,0,
+//   0,0
+// ]
+
 // ];
 
 //関数いろいろ
@@ -154,7 +210,7 @@ var Koma = function(piece){
 
 //選択した駒が、選択したマスに動けるかどうかしらべる関数
 var CanMove = function(pos){
-	for(var i = 0; i < 8; i++){
+	for(var i = 0; i < 12; i++){
 		if(CanGo[i][selectedKoma]){
 			if(pos.rank == FromClickDan + Direction[i].rank && pos.file == FromClickSuji + Direction[i].file)return 1;
 			
@@ -181,7 +237,7 @@ var IsControl = function(pos,sengo){
 			var start = new PiecePos(0,0);
 			start.rank = i; start.file = j;
 			
-			for(var k = 0; k < 8; k++){
+			for(var k = 0; k < 12; k++){
 				var moved = new PiecePos(0,0);
 				if(CanGo[k][piece]){
 					moved.rank  = start.rank + Direction[k].rank;
@@ -321,7 +377,7 @@ Position.prototype = {
 				var start = new PiecePos(0,0);
 				start.rank = i; start.file = j;
 				
-				for(var k = 0; k < 8; k++){
+				for(var k = 0; k < 12; k++){
 					var moved = new PiecePos(0,0);
 					if(CanGo[k][piece]){
 						moved.rank  = start.rank + Direction[k].rank;
@@ -349,7 +405,7 @@ Position.prototype = {
 	
 	//ある駒が、あるマスに動けるかどうかしらべる関数
 	CanMove: function(pos,piece){
-		for(var i = 0; i < 8; i++){
+		for(var i = 0; i < 12; i++){
 			if(CanGo[i][piece]){
 				if(pos.rank == clickRank + Direction[i].rank && pos.file == clickFile + Direction[i].file)return 1;
 				
